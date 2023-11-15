@@ -15,10 +15,16 @@
 
         <VerticalStackLayout Grid.Row="1" Grid.Column="0">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
-                <Ellipse Fill="white"
-                 WidthRequest="30"
-                 HeightRequest="30"/>
-                <Ellipse Fill="white"
+                <Ellipse x:Name="box1_column1"
+                         Fill="white"
+                         WidthRequest="30"
+                         HeightRequest="30">
+                    <Ellipse.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTap_Box1Column1"
+                                              NumberOfTapsRequired="1"/>
+                    </Ellipse.GestureRecognizers>
+                </Ellipse>
+                    <Ellipse Fill="white"
                      WidthRequest="30"
                      HeightRequest="30"/>
                 <Ellipse Fill="white"

@@ -6,4 +6,10 @@ public partial class BoardView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void OnTap_Box1Column1(object sender, TappedEventArgs args)
+	{
+		Console.WriteLine("Tapped box 1");
+		box1_column1.Fill = Color.Parse("red");
+	}
 }
