@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectFour.MainPage">
+
+    <Grid RowDefinitions=".75*,Auto" 
+          ColumnDefinitions="*"
+          RowSpacing="10"
+          Margin="20">
+
+        <Image Source="connect_four_logo.png"/>
+
+        <Button Text="Start Game"
+                Grid.Row="1"/>
+
+    </Grid>
+
+</ContentPage>
