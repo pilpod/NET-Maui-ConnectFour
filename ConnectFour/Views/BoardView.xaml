@@ -17,20 +17,111 @@
         <VerticalStackLayout Grid.Row="1"
                              Grid.Column="0">
             <Image HeightRequest="30"
+                   ClassId="0"
                    Source="arrow_down_drop_circle.svg">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
                 </Image.Behaviors>
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnTap_Column1"
+                    <TapGestureRecognizer Tapped="OnTap_Column"
                                           NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1"
+                             Grid.Column="1">
+            <Image HeightRequest="30"
+                   ClassId="1"
+                   Source="arrow_down_drop_circle.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
+                </Image.Behaviors>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTap_Column"
+                                          NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1"
+                     Grid.Column="2">
+            <Image HeightRequest="30"
+           ClassId="2"
+           Source="arrow_down_drop_circle.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
+                </Image.Behaviors>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTap_Column"
+                                  NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1"
+                     Grid.Column="3">
+            <Image HeightRequest="30"
+           ClassId="3"
+           Source="arrow_down_drop_circle.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
+                </Image.Behaviors>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTap_Column"
+                                  NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1"
+                     Grid.Column="4">
+            <Image HeightRequest="30"
+           ClassId="4"
+           Source="arrow_down_drop_circle.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
+                </Image.Behaviors>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTap_Column"
+                                  NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1"
+                     Grid.Column="5">
+            <Image HeightRequest="30"
+           ClassId="5"
+           Source="arrow_down_drop_circle.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
+                </Image.Behaviors>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTap_Column"
+                                  NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1"
+                     Grid.Column="6">
+            <Image HeightRequest="30"
+           ClassId="6"
+           Source="arrow_down_drop_circle.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
+                </Image.Behaviors>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTap_Column"
+                                  NumberOfTapsRequired="1"/>
                 </Image.GestureRecognizers>
             </Image>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="0">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
-                <Ellipse x:Name="box1_column1"
+                <Ellipse x:Name="piece6_column1"
                          Fill="white"
                          WidthRequest="30"
                          HeightRequest="30"/>
@@ -47,6 +138,7 @@
                          WidthRequest="30"
                          HeightRequest="30"/>
                 <Ellipse Fill="white"
+                         x:Name="piece1_column1"
                          WidthRequest="30"
                          HeightRequest="30"/>
             </VerticalStackLayout>

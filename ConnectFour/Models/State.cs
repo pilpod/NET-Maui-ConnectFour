@@ -6,7 +6,7 @@ namespace ConnectFour.Models
 {
     public class State
     {
-        Player[] players;
+        readonly Player[] players;
         int GameRoundsPlayed;
         bool GameOver;
         Piece[] pieces { get; set; }
@@ -40,7 +40,7 @@ namespace ConnectFour.Models
 
         public void PlayPiece(int position)
         {
-            this.pieces[position].isOccupied = true;
+            this.pieces[position].IsOccupied = true;
         }
     }
 }

@@ -3,11 +3,11 @@ namespace ConnectFour.Models
 {
     public class Piece
     {
-        public bool isOccupied { get; set; }
+        public bool IsOccupied { get; set; }
 
         public Piece()
         {
-            this.isOccupied = false;
+            this.IsOccupied = false;
         }
     }
 }

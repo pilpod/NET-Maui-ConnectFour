@@ -7,9 +7,12 @@ public partial class BoardView : ContentPage
 		InitializeComponent();
 	}
 
-	private void OnTap_Column1(object sender, TappedEventArgs args)
+	private void OnTap_Column(object sender, TappedEventArgs args)
 	{
-		Console.WriteLine("Tapped box 1");
-		box1_column1.Fill = Color.Parse("red");
+		Image image = sender as Image;
+
+		
+		Console.WriteLine($"Tapped column {image.ClassId}");
+		piece1_column1.Fill = Color.Parse("red");
 	}
 }
