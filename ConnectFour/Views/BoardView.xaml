@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConnectFour.Views.BoardView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="BoardView">
 
-    <Grid RowDefinitions=".20*,Auto,.20*"
+    <Grid RowDefinitions=".20*,.05*,Auto,.20*"
           ColumnDefinitions="*,*,*,*,*,*,*"
           ColumnSpacing="5"
           Margin="20">
@@ -13,36 +14,45 @@
                Grid.ColumnSpan="7"
                HorizontalOptions="Center"/>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="0">
+        <VerticalStackLayout Grid.Row="1"
+                             Grid.Column="0">
+            <Image HeightRequest="30"
+                   Source="arrow_down_drop_circle.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
+                </Image.Behaviors>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTap_Column1"
+                                          NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2" Grid.Column="0">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
                 <Ellipse x:Name="box1_column1"
                          Fill="white"
                          WidthRequest="30"
-                         HeightRequest="30">
-                    <Ellipse.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnTap_Box1Column1"
-                                              NumberOfTapsRequired="1"/>
-                    </Ellipse.GestureRecognizers>
-                </Ellipse>
-                    <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-             WidthRequest="30"
-             HeightRequest="30"/>
+                         WidthRequest="30"
+                         HeightRequest="30"/>
+                <Ellipse Fill="white"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+        <VerticalStackLayout Grid.Row="2" Grid.Column="1">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
                 <Ellipse Fill="white"
                          WidthRequest="30"
@@ -65,7 +75,7 @@
             </VerticalStackLayout>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="2">
+        <VerticalStackLayout Grid.Row="2" Grid.Column="2">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
                 <Ellipse Fill="white"
                  WidthRequest="30"
@@ -88,7 +98,7 @@
             </VerticalStackLayout>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="3">
+        <VerticalStackLayout Grid.Row="2" Grid.Column="3">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
                 <Ellipse Fill="white"
                  WidthRequest="30"
@@ -111,7 +121,7 @@
             </VerticalStackLayout>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="4">
+        <VerticalStackLayout Grid.Row="2" Grid.Column="4">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
                 <Ellipse Fill="white"
                  WidthRequest="30"
@@ -134,7 +144,7 @@
             </VerticalStackLayout>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="5">
+        <VerticalStackLayout Grid.Row="2" Grid.Column="5">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
                 <Ellipse Fill="white"
                  WidthRequest="30"
@@ -157,7 +167,7 @@
             </VerticalStackLayout>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="6">
+        <VerticalStackLayout Grid.Row="2" Grid.Column="6">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
                 <Ellipse Fill="white"
                  WidthRequest="30"
