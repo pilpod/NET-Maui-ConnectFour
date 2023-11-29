@@ -9,7 +9,7 @@ namespace ConnectFour.Models
         readonly Player[] players;
         int GameRoundsPlayed;
         bool GameOver;
-        Piece[] pieces { get; set; }
+        Piece[] Pieces { get; set; }
 
         public State()
         {
@@ -19,7 +19,7 @@ namespace ConnectFour.Models
                 new Player() {  Name="Opponent", Points=0 }
             };
 
-            this.pieces = new Piece[42];
+            this.Pieces = new Piece[42];
 
             this.GameRoundsPlayed = 0;
             this.GameOver = false;
@@ -40,7 +40,7 @@ namespace ConnectFour.Models
 
         public void PlayPiece(int position)
         {
-            this.pieces[position].IsOccupied = true;
+            this.Pieces[position].IsOccupied = true;
         }
     }
 }
