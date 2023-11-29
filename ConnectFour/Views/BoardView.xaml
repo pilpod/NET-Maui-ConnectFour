@@ -121,24 +121,28 @@
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="0">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
-                <Ellipse x:Name="piece6_column1"
+                <Ellipse x:Name="piece5_column0"
                          Fill="white"
                          WidthRequest="30"
                          HeightRequest="30"/>
                 <Ellipse Fill="white"
+                         x:Name="piece4_column0"
                          WidthRequest="30"
                          HeightRequest="30"/>
                 <Ellipse Fill="white"
+                         x:Name="piece3_column0"
                          WidthRequest="30"
                          HeightRequest="30"/>
                 <Ellipse Fill="white"
+                         x:Name="piece2_column0"
                          WidthRequest="30"
                          HeightRequest="30"/>
                 <Ellipse Fill="white"
+                         x:Name="piece1_column0"
                          WidthRequest="30"
                          HeightRequest="30"/>
                 <Ellipse Fill="white"
-                         x:Name="piece1_column1"
+                         x:Name="piece0_column0"
                          WidthRequest="30"
                          HeightRequest="30"/>
             </VerticalStackLayout>
@@ -146,139 +150,175 @@
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="1">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
-                <Ellipse Fill="white"
+                <Ellipse x:Name="piece11_column1"
+                         Fill="white"
                          WidthRequest="30"
                          HeightRequest="30"/>
                 <Ellipse Fill="white"
-                             WidthRequest="30"
-                             HeightRequest="30"/>
+                         x:Name="piece10_column1"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                             WidthRequest="30"
-                             HeightRequest="30"/>
+                         x:Name="piece9_column1"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                             WidthRequest="30"
-                             HeightRequest="30"/>
+                         x:Name="piece8_column1"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                             WidthRequest="30"
-                             HeightRequest="30"/>
+                         x:Name="piece7_column1"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece6_column1"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="2">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
+                <Ellipse x:Name="piece17_column2"
+                         Fill="white"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                 WidthRequest="30"
-                 HeightRequest="30"/>
+                         x:Name="piece16_column2"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece15_column2"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece14_column2"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece13_column2"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
-                <Ellipse Fill="white"
-             WidthRequest="30"
-             HeightRequest="30"/>
+                         x:Name="piece12_column2"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="3">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
+                <Ellipse x:Name="piece23_column3"
+                         Fill="white"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                 WidthRequest="30"
-                 HeightRequest="30"/>
+                         x:Name="piece22_column3"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece21_column3"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece20_column3"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece19_column3"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
-                <Ellipse Fill="white"
-             WidthRequest="30"
-             HeightRequest="30"/>
+                         x:Name="piece18_column3"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="4">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
+                <Ellipse x:Name="piece29_column4"
+                         Fill="white"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                 WidthRequest="30"
-                 HeightRequest="30"/>
+                         x:Name="piece28_column4"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece27_column4"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece26_column4"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece25_column4"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
-                <Ellipse Fill="white"
-             WidthRequest="30"
-             HeightRequest="30"/>
+                         x:Name="piece24_column4"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="5">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
+                <Ellipse x:Name="piece35_column5"
+                         Fill="white"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                 WidthRequest="30"
-                 HeightRequest="30"/>
+                         x:Name="piece34_column5"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece33_column5"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece32_column5"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece31_column5"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
-                <Ellipse Fill="white"
-             WidthRequest="30"
-             HeightRequest="30"/>
+                         x:Name="piece30_column5"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="6">
             <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
+                <Ellipse x:Name="piece41_column6"
+                         Fill="white"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                 WidthRequest="30"
-                 HeightRequest="30"/>
+                         x:Name="piece40_column6"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece39_column6"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece38_column6"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
+                         x:Name="piece37_column6"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
                 <Ellipse Fill="white"
-                     WidthRequest="30"
-                     HeightRequest="30"/>
-                <Ellipse Fill="white"
-             WidthRequest="30"
-             HeightRequest="30"/>
+                         x:Name="piece36_column6"
+                         WidthRequest="30"
+                         HeightRequest="30"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
 

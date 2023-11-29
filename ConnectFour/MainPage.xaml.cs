@@ -1,10 +1,10 @@
-﻿using ConnectFour.Views;
+﻿using ConnectFour.Models;
+using ConnectFour.Views;
 using System;
 namespace ConnectFour
 {
     public partial class MainPage : ContentPage
     {
-
         public MainPage()
         {
             InitializeComponent();
@@ -12,7 +12,9 @@ namespace ConnectFour
 
         private async void StartGameButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BoardView());
+            State state = new State();
+
+            await Navigation.PushAsync(new BoardView(state));
         }
     }
 }
