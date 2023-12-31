@@ -78,8 +78,12 @@ namespace ConnectFour.Models
 
         }
 
-        public void CheckIfPlayerWin()
+        public void CheckIfPlayerWin(int position)
         {
+            bool playerWin = false;
+
+            // check horitzontal
+
 
         }
 
