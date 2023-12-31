@@ -6,5 +6,6 @@ namespace ConnectFour.Models
     {
         public string Name { get; set; }
         public int Points { get; set; }
+        public bool isPlaying { get; set; }
     }
 }
