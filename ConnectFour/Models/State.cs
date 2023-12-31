@@ -47,13 +47,13 @@ namespace ConnectFour.Models
             {
                 if (this.pieces[i] == null)
                 {
-                    Console.WriteLine("No pieces");
+                    // No pieces
                     this.pieces[i] = new Piece();
                     this.pieces[i].IsOccupied = true;
                     ChangeTurn();
                     return i;
                 }
-                Console.WriteLine("Occupied by a piece");
+                // Occupied by a piece
                 continue;
             }
 

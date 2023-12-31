@@ -23,12 +23,8 @@ public partial class BoardView : ContentPage
         Image image = sender as Image;
         int column = int.Parse(image.ClassId);
 
-        Console.WriteLine($"Tapped column {column}");
         int piecePos = State.PlayPiece(column);
-        Console.WriteLine($"{piecePos}");
-
         string pieceName = $"piece{piecePos.ToString()}_column{column.ToString()}";
-        Console.WriteLine(pieceName);
         Ellipse ellipse = (Ellipse)FindByName(pieceName);
 
         if (State.players[0].isPlaying)
