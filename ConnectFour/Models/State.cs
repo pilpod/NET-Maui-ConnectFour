@@ -15,8 +15,8 @@ namespace ConnectFour.Models
         {
             this.players = new Player[]
             {
-                new Player() { Name="Player", Points=0, isPlaying=false },
-                new Player() {  Name="Opponent", Points=0, isPlaying=true }
+                new Player() { Name="Player", Points=0, isPlaying=true },
+                new Player() {  Name="Opponent", Points=0, isPlaying=false }
             };
 
             this.pieces = new Piece[42];
@@ -50,6 +50,10 @@ namespace ConnectFour.Models
                     // No pieces
                     this.pieces[i] = new Piece();
                     this.pieces[i].IsOccupied = true;
+
+                    if (players[0].isPlaying) this.pieces[i].PlayedBy = 1;
+                    if (players[1].isPlaying) this.pieces[i].PlayedBy = 2;
+
                     ChangeTurn();
                     return i;
                 }
@@ -73,5 +77,12 @@ namespace ConnectFour.Models
             players[1].isPlaying = false;
 
         }
+
+        public void CheckIfPlayerWin()
+        {
+
+        }
+
+
     }
 }

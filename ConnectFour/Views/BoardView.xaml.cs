@@ -27,14 +27,14 @@ public partial class BoardView : ContentPage
         string pieceName = $"piece{piecePos.ToString()}_column{column.ToString()}";
         Ellipse ellipse = (Ellipse)FindByName(pieceName);
 
-        if (State.players[0].isPlaying)
+        if (State.players[1].isPlaying)
         {
             ellipse.Fill = Color.FromArgb("FF3333");
             labelTurnPlayer.TextColor = Color.FromArgb("338AFF");
             labelTurnPlayer.Text = "Turn Player 2";
         }
 
-        if (State.players[1].isPlaying)
+        if (State.players[0].isPlaying)
         {
             ellipse.Fill = Color.FromArgb("338AFF");
             labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
