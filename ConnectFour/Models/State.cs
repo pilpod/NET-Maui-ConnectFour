@@ -51,8 +51,17 @@ namespace ConnectFour.Models
                     this.pieces[i] = new Piece();
                     this.pieces[i].IsOccupied = true;
 
-                    if (players[0].isPlaying) this.pieces[i].PlayedBy = 1;
-                    if (players[1].isPlaying) this.pieces[i].PlayedBy = 2;
+                    if (players[0].isPlaying)
+                    {
+                        this.pieces[i].PlayedBy = 1;
+                        bool playerWin = CheckIfPlayerWin(i, this.pieces[i].PlayedBy);
+                    };
+
+                    if (players[1].isPlaying)
+                    {
+                        this.pieces[i].PlayedBy = 2;
+                        bool playerWin = CheckIfPlayerWin(i, this.pieces[i].PlayedBy);
+                    };
 
                     ChangeTurn();
                     return i;
@@ -78,12 +87,30 @@ namespace ConnectFour.Models
 
         }
 
-        public void CheckIfPlayerWin(int position)
+        public bool CheckIfPlayerWin(int position, int playerNumber)
         {
             bool playerWin = false;
+            int count = 0;
 
-            // check horitzontal
+            // check vertical
+            for (int i = 1; i <= 3; i++)
+            {
+                bool positionInBound = (position - i) >= 0 && (position - i) < this.pieces.Length;
+                
+                if (positionInBound  &&
+                    this.pieces[position - i] != null &&
+                    this.pieces[position - i].PlayedBy == playerNumber)
+                {
+                    count++;
+                    continue;
+                }
 
+                break;
+            }
+
+            if (count == 3) playerWin = true;
+
+            return playerWin;
 
         }
 
