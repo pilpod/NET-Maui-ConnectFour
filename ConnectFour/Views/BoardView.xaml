@@ -10,9 +10,19 @@
           ColumnSpacing="5"
           Margin="20">
 
-        <Label Text="Board view"
-               Grid.ColumnSpan="7"
-               HorizontalOptions="Center"/>
+        <VerticalStackLayout Grid.Row="0"
+                             Grid.ColumnSpan="7">
+            <Label Text="Board view"
+                   HorizontalOptions="Start"/>
+            <Label x:Name="player_one_points"
+                   Text="Player 1 Points : 0"
+                   TextColor="Red" 
+                   FontSize="20" />
+            <Label x:Name="player_two_points"
+                   Text="Player 2 Points : 0" 
+                   TextColor="Blue" 
+                   FontSize="20" />
+        </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1"
                              Grid.Column="0">

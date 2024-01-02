@@ -8,7 +8,7 @@ namespace ConnectFour.Models
     {
         public readonly Player[] players;
         int GameRoundsPlayed;
-        bool GameOver;
+        public bool GameOver;
         public Piece[] pieces { get; set; }
 
         public State()
@@ -36,6 +36,7 @@ namespace ConnectFour.Models
         {
             GameOver = true;
             GameRoundsPlayed++;
+            Array.Clear(this.pieces);
         }
 
         public int PlayPiece(int position)
@@ -55,12 +56,24 @@ namespace ConnectFour.Models
                     {
                         this.pieces[i].PlayedBy = 1;
                         bool playerWin = CheckIfPlayerWin(i, this.pieces[i].PlayedBy);
+
+                        if (playerWin)
+                        {
+                            players[0].Points++;
+                            EndGame();
+                        }
                     };
 
                     if (players[1].isPlaying)
                     {
                         this.pieces[i].PlayedBy = 2;
                         bool playerWin = CheckIfPlayerWin(i, this.pieces[i].PlayedBy);
+
+                        if (playerWin)
+                        {
+                            players[1].Points++;
+                            EndGame();
+                        }
                     };
 
                     ChangeTurn();
@@ -90,7 +103,7 @@ namespace ConnectFour.Models
         public bool CheckIfPlayerWin(int position, int playerNumber)
         {
             bool playerWin = false;
-            int count = 0;
+            int countVertical = 0;
 
             // check vertical
             for (int i = 1; i <= 3; i++)
@@ -101,14 +114,14 @@ namespace ConnectFour.Models
                     this.pieces[position - i] != null &&
                     this.pieces[position - i].PlayedBy == playerNumber)
                 {
-                    count++;
+                    countVertical++;
                     continue;
                 }
 
                 break;
             }
 
-            if (count == 3) playerWin = true;
+            if (countVertical == 3) playerWin = true;
 
             return playerWin;
 

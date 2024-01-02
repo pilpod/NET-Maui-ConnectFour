@@ -6,6 +6,7 @@ namespace ConnectFour.Views;
 public partial class BoardView : ContentPage
 {
     State State { get; set; }
+
     public BoardView(State state)
     {
         InitializeComponent();
@@ -23,23 +24,37 @@ public partial class BoardView : ContentPage
         Image image = sender as Image;
         int column = int.Parse(image.ClassId);
 
-        int piecePos = State.PlayPiece(column);
-        string pieceName = $"piece{piecePos.ToString()}_column{column.ToString()}";
-        Ellipse ellipse = (Ellipse)FindByName(pieceName);
-
-        if (State.players[1].isPlaying)
+        if (!State.GameOver)
         {
-            ellipse.Fill = Color.FromArgb("FF3333");
-            labelTurnPlayer.TextColor = Color.FromArgb("338AFF");
-            labelTurnPlayer.Text = "Turn Player 2";
+            int piecePos = State.PlayPiece(column);
+            string pieceName = $"piece{piecePos.ToString()}_column{column.ToString()}";
+            Ellipse ellipse = (Ellipse)FindByName(pieceName);
+
+            player_one_points.Text = $"Player 1 Points : {State.players[0].Points}";
+            player_two_points.Text = $"Player 2 Points : {State.players[1].Points}";
+
+
+            if (State.players[1].isPlaying)
+            {
+                ellipse.Fill = Color.FromArgb("FF3333");
+                labelTurnPlayer.TextColor = Color.FromArgb("338AFF");
+                labelTurnPlayer.Text = "Turn Player 2";
+            }
+
+            if (State.players[0].isPlaying)
+            {
+                ellipse.Fill = Color.FromArgb("338AFF");
+                labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
+                labelTurnPlayer.Text = "Turn Player 1";
+            }
         }
 
-        if (State.players[0].isPlaying)
+        if (State.GameOver)
         {
-            ellipse.Fill = Color.FromArgb("338AFF");
-            labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
-            labelTurnPlayer.Text = "Turn Player 1";
+            labelTurnPlayer.TextColor = Color.FromArgb("000000");
+            labelTurnPlayer.Text = "Game Over";
         }
+
 
     }
 }
