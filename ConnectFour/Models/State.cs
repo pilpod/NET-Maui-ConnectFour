@@ -104,6 +104,7 @@ namespace ConnectFour.Models
         {
             bool playerWin = false;
             int countVertical = 0;
+            int countHorizontal = 0;
 
             // check vertical
             for (int i = 1; i <= 3; i++)
@@ -121,7 +122,37 @@ namespace ConnectFour.Models
                 break;
             }
 
-            if (countVertical == 3) playerWin = true;
+            //check horitzontal
+            for (int i = 1; i <= 3; i++)
+            {
+                int neighbornPieceRight = position + i * 6;
+                bool positionInBoundRight = neighbornPieceRight >= 0 && neighbornPieceRight < this.pieces.Length;
+
+                int neighbornPieceLeft = position - i * 6;
+                bool positionInBoundLeft = neighbornPieceLeft >= 0 && neighbornPieceLeft < this.pieces.Length;
+
+                if (positionInBoundRight || positionInBoundLeft)
+                {
+                    if (positionInBoundRight &&
+                        this.pieces[neighbornPieceRight] != null &&
+                        this.pieces[neighbornPieceRight].PlayedBy == playerNumber)
+                    {
+                        countHorizontal++;
+                    }
+
+                    if (positionInBoundLeft &&
+                        this.pieces[neighbornPieceLeft] != null &&
+                        this.pieces[neighbornPieceLeft].PlayedBy == playerNumber)
+                    {
+                        countHorizontal++;
+                    }
+                    continue;
+                }
+
+                break;
+            }
+
+            if (countVertical == 3 || countHorizontal == 3) playerWin = true;
 
             return playerWin;
 
