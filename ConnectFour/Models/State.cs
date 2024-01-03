@@ -105,13 +105,15 @@ namespace ConnectFour.Models
             bool playerWin = false;
             int countVertical = 0;
             int countHorizontal = 0;
+            int countDiagonalRight = 0;
+            int countDiagonalLeft = 0;
 
             // check vertical
             for (int i = 1; i <= 3; i++)
             {
                 bool positionInBound = (position - i) >= 0 && (position - i) < this.pieces.Length;
-                
-                if (positionInBound  &&
+
+                if (positionInBound &&
                     this.pieces[position - i] != null &&
                     this.pieces[position - i].PlayedBy == playerNumber)
                 {
@@ -152,7 +154,66 @@ namespace ConnectFour.Models
                 break;
             }
 
-            if (countVertical == 3 || countHorizontal == 3) playerWin = true;
+            // check diagonal right
+            for (int i = 1; i <= 3; i++)
+            {
+                int neighbornPieceDownRight = position + i * 5;
+                bool positionInBoundDownRight = neighbornPieceDownRight >= 0 && neighbornPieceDownRight < this.pieces.Length;
+
+                int neighbornPieceUpLeft = position - i * 5;
+                bool positionInBoundUpLeft = neighbornPieceUpLeft >= 0 && neighbornPieceUpLeft < this.pieces.Length;
+
+
+                if (positionInBoundUpLeft || positionInBoundDownRight)
+                {
+                    if (positionInBoundUpLeft &&
+                    this.pieces[neighbornPieceUpLeft] != null &&
+                    this.pieces[neighbornPieceUpLeft].PlayedBy == playerNumber) countDiagonalRight++;
+
+
+                    if (positionInBoundDownRight &&
+                        this.pieces[neighbornPieceDownRight] != null &&
+                        this.pieces[neighbornPieceDownRight].PlayedBy == playerNumber) countDiagonalRight++;
+
+                    continue;
+                }
+
+                break;
+            }
+
+            // check diagonal left
+            for (int i = 1; i <= 3; i++)
+            {
+                int neighbornPieceUpRight = position + i * 7;
+                bool positionInBoundUpRight = neighbornPieceUpRight >= 0 && neighbornPieceUpRight < this.pieces.Length;
+
+                int neighbornPieceDownLeft = position - i * 7;
+                bool positionInBoundDownLeft = neighbornPieceDownLeft >= 0 && neighbornPieceDownLeft < this.pieces.Length;
+
+
+                if (positionInBoundUpRight || positionInBoundDownLeft)
+                {
+                    if (positionInBoundUpRight &&
+                        this.pieces[neighbornPieceUpRight] != null &&
+                        this.pieces[neighbornPieceUpRight].PlayedBy == playerNumber)
+                    {
+                        countDiagonalLeft++;
+                    }
+
+                    if (positionInBoundDownLeft &&
+                        this.pieces[neighbornPieceDownLeft] != null &&
+                        this.pieces[neighbornPieceDownLeft].PlayedBy == playerNumber)
+                    {
+                        countDiagonalLeft++;
+                    }
+
+                    continue;
+                }
+
+                break;
+            }
+
+            if (countVertical == 3 || countHorizontal == 3 || countDiagonalRight == 3 || countDiagonalLeft == 3) playerWin = true;
 
             return playerWin;
 
