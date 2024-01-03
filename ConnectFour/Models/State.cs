@@ -195,17 +195,11 @@ namespace ConnectFour.Models
                 {
                     if (positionInBoundUpRight &&
                         this.pieces[neighbornPieceUpRight] != null &&
-                        this.pieces[neighbornPieceUpRight].PlayedBy == playerNumber)
-                    {
-                        countDiagonalLeft++;
-                    }
+                        this.pieces[neighbornPieceUpRight].PlayedBy == playerNumber) countDiagonalLeft++;
 
                     if (positionInBoundDownLeft &&
                         this.pieces[neighbornPieceDownLeft] != null &&
-                        this.pieces[neighbornPieceDownLeft].PlayedBy == playerNumber)
-                    {
-                        countDiagonalLeft++;
-                    }
+                        this.pieces[neighbornPieceDownLeft].PlayedBy == playerNumber) countDiagonalLeft++;
 
                     continue;
                 }
