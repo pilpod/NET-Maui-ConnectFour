@@ -332,14 +332,22 @@
             </VerticalStackLayout>
         </VerticalStackLayout>
 
+        <VerticalStackLayout Grid.Row="3" Grid.ColumnSpan="7">
+            <Label x:Name="labelTurnPlayer"
+                   Text="" 
+                   TextColor="red" 
+                   FontSize="25"
+                   Margin="0,20"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Button x:Name="btn_newgame" 
+                    BackgroundColor="Blue" 
+                    Text="New Game"
+                    FontSize="20"
+                    IsVisible="false"
+                    Clicked="StartNewGame"/>
+        </VerticalStackLayout>
 
-        <Label Grid.Row="3" Grid.ColumnSpan="7"
-               x:Name="labelTurnPlayer"
-               Text="" 
-               TextColor="red" 
-               FontSize="25"  
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
 
 
     </Grid>

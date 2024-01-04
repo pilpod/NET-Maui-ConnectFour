@@ -53,8 +53,17 @@ public partial class BoardView : ContentPage
         {
             labelTurnPlayer.TextColor = Color.FromArgb("000000");
             labelTurnPlayer.Text = "Game Over";
+            btn_newgame.IsVisible = true;
         }
+    }
 
+    private void StartNewGame(object sender, EventArgs e)
+    {
+        Console.WriteLine("New Game");
+        State.NewGame();
 
+        labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
+        labelTurnPlayer.Text = "Turn Player 1";
+        btn_newgame.IsVisible = false;
     }
 }

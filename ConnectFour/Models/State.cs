@@ -39,6 +39,13 @@ namespace ConnectFour.Models
             Array.Clear(this.pieces);
         }
 
+        public void NewGame()
+        {
+            GameOver = false;
+            players[0].isPlaying = true;
+            players[1].isPlaying = false;
+        }
+
         public int PlayPiece(int position)
         {
             int index = position * 6;
