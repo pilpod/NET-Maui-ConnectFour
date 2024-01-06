@@ -3,17 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConnectFour.Views.BoardView"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             Title="BoardView">
+             Title="Board">
 
     <Grid RowDefinitions=".20*,.05*,Auto,.20*"
           ColumnDefinitions="*,*,*,*,*,*,*"
           ColumnSpacing="5"
-          Margin="20">
+          Margin="20"
+          x:Name="myGrid">
 
         <VerticalStackLayout Grid.Row="0"
                              Grid.ColumnSpan="7">
-            <Label Text="Board view"
-                   HorizontalOptions="Start"/>
             <Label x:Name="player_one_points"
                    Text="Player 1 Points : 0"
                    TextColor="Red" 
@@ -130,7 +129,7 @@
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="0">
-            <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10">
+            <VerticalStackLayout BackgroundColor="BlueViolet" Spacing="20" VerticalOptions="Center" Padding="10" >
                 <Ellipse x:Name="piece5_column0"
                          Fill="white"
                          WidthRequest="30"

@@ -65,5 +65,14 @@ public partial class BoardView : ContentPage
         labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
         labelTurnPlayer.Text = "Turn Player 1";
         btn_newgame.IsVisible = false;
+
+        IEnumerable<Ellipse> ellipses = myGrid.GetVisualTreeDescendants().OfType<Ellipse>();
+
+        foreach (var piece in ellipses)
+        {
+            Console.WriteLine(piece.Fill);
+            piece.Fill = Color.FromArgb("FFFFFF");
+        }
+
     }
 }
