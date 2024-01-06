@@ -17,6 +17,7 @@ public partial class BoardView : ContentPage
 
         labelTurnPlayer.Text = "Turn Player 1";
         labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
+
     }
 
     private void OnTap_Column(object sender, TappedEventArgs args)
@@ -47,6 +48,8 @@ public partial class BoardView : ContentPage
                 labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
                 labelTurnPlayer.Text = "Turn Player 1";
             }
+
+            if (State.CheckIfColumnFull(column)) image.IsEnabled = false;
         }
 
         if (State.GameOver)

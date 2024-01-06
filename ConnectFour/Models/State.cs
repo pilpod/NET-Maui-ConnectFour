@@ -220,6 +220,27 @@ namespace ConnectFour.Models
 
         }
 
+        public bool CheckIfColumnFull(int column)
+        {
+            int piecesByColumn = 6;
+            bool isFull = false;
+            int currentQuantityOfPieces = 0;
+            int initIndex = column * piecesByColumn;
+
+            for (int i = initIndex; i < initIndex + piecesByColumn; i++)
+            {
+                if (pieces[i] != null && pieces[i].IsOccupied) currentQuantityOfPieces++;
+            }
+
+            if (currentQuantityOfPieces == piecesByColumn)
+            {
+                isFull = true;
+                return isFull;
+            }
+
+            return isFull;
+        }
+
 
     }
 }
