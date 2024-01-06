@@ -62,13 +62,18 @@ public partial class BoardView : ContentPage
 
     private void StartNewGame(object sender, EventArgs e)
     {
-        Console.WriteLine("New Game");
         State.NewGame();
 
         labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
         labelTurnPlayer.Text = "Turn Player 1";
         btn_newgame.IsVisible = false;
 
+        this.CleanBoard();
+        this.EnableArrowButtons();
+    }
+
+    private void CleanBoard()
+    {
         IEnumerable<Ellipse> ellipses = myGrid.GetVisualTreeDescendants().OfType<Ellipse>();
 
         foreach (var piece in ellipses)
@@ -76,6 +81,15 @@ public partial class BoardView : ContentPage
             Console.WriteLine(piece.Fill);
             piece.Fill = Color.FromArgb("FFFFFF");
         }
+    }
 
+    private void EnableArrowButtons()
+    {
+        IEnumerable<Image> images = myGrid.GetVisualTreeDescendants().OfType<Image>();
+
+        foreach (var image in images)
+        {
+            image.IsEnabled = true;
+        }
     }
 }
