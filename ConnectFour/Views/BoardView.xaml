@@ -21,6 +21,13 @@
                    Text="Player 2 Points : 0" 
                    TextColor="Blue" 
                    FontSize="20" />
+            <Button x:Name="btn_reset_game" 
+                    BackgroundColor="Red"
+                    Margin="0,20,0,0"
+                    Text="Reset Game"
+                    FontSize="20"
+                    IsVisible="false"
+                    Clicked="ResetGame"/>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1"

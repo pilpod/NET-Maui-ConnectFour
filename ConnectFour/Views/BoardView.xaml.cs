@@ -31,22 +31,18 @@ public partial class BoardView : ContentPage
             string pieceName = $"piece{piecePos.ToString()}_column{column.ToString()}";
             Ellipse ellipse = (Ellipse)FindByName(pieceName);
 
-            player_one_points.Text = $"Player 1 Points : {State.players[0].Points}";
-            player_two_points.Text = $"Player 2 Points : {State.players[1].Points}";
-
+            this.RenderPlayersPoints();
 
             if (State.players[1].isPlaying)
             {
                 ellipse.Fill = Color.FromArgb("FF3333");
-                labelTurnPlayer.TextColor = Color.FromArgb("338AFF");
-                labelTurnPlayer.Text = "Turn Player 2";
+                this.TurnPlayer(2);
             }
 
             if (State.players[0].isPlaying)
             {
                 ellipse.Fill = Color.FromArgb("338AFF");
-                labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
-                labelTurnPlayer.Text = "Turn Player 1";
+                this.TurnPlayer(1);
             }
 
             if (State.CheckIfColumnFull(column)) image.IsEnabled = false;
@@ -57,6 +53,7 @@ public partial class BoardView : ContentPage
             labelTurnPlayer.TextColor = Color.FromArgb("000000");
             labelTurnPlayer.Text = "Game Over";
             btn_newgame.IsVisible = true;
+            btn_reset_game.IsVisible = true;
         }
     }
 
@@ -64,12 +61,21 @@ public partial class BoardView : ContentPage
     {
         State.NewGame();
 
-        labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
-        labelTurnPlayer.Text = "Turn Player 1";
-        btn_newgame.IsVisible = false;
+        this.TurnPlayer(1);
 
+        this.DisableBtn();
         this.CleanBoard();
         this.EnableArrowButtons();
+    }
+
+    private void ResetGame(object sender, EventArgs e)
+    {
+        State.ResetGame();
+        this.CleanBoard();
+        this.EnableArrowButtons();
+        this.RenderPlayersPoints();
+        this.DisableBtn();
+        this.TurnPlayer(1);
     }
 
     private void CleanBoard()
@@ -92,4 +98,32 @@ public partial class BoardView : ContentPage
             image.IsEnabled = true;
         }
     }
+
+    private void DisableBtn()
+    {
+        btn_newgame.IsVisible = false;
+        btn_reset_game.IsVisible = false;
+    }
+
+    private void RenderPlayersPoints()
+    {
+        player_one_points.Text = $"Player 1 Points : {State.players[0].Points}";
+        player_two_points.Text = $"Player 2 Points : {State.players[1].Points}";
+    }
+
+    private void TurnPlayer(int player)
+    {
+        if (player == 1)
+        {
+            labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
+            labelTurnPlayer.Text = "Turn Player " + player;
+        }
+
+        if (player == 2)
+        {
+            labelTurnPlayer.TextColor = Color.FromArgb("338AFF");
+            labelTurnPlayer.Text = "Turn Player " + player;
+        }
+    }
+
 }

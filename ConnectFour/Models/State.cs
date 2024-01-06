@@ -30,6 +30,8 @@ namespace ConnectFour.Models
             GameOver = false;
             players[0].Points = 0;
             players[1].Points = 0;
+            GameRoundsPlayed = 0;
+            Array.Clear(this.pieces);
         }
 
         public void EndGame()
