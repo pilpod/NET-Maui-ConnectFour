@@ -1,10 +1,13 @@
 using ConnectFour.Models;
 using Microsoft.Maui.Controls.Shapes;
+using Plugin.Maui.Audio;
 
 namespace ConnectFour.Views;
 
 public partial class BoardView : ContentPage
 {
+    private readonly IAudioManager audioManager;
+
     State State { get; set; }
 
     public BoardView(State state)
@@ -17,6 +20,8 @@ public partial class BoardView : ContentPage
 
         labelTurnPlayer.Text = "Turn Player 1";
         labelTurnPlayer.TextColor = Color.FromArgb("FF3333");
+
+        this.audioManager = AudioManager.Current;
 
     }
 
@@ -31,6 +36,7 @@ public partial class BoardView : ContentPage
             string pieceName = $"piece{piecePos.ToString()}_column{column.ToString()}";
             Ellipse ellipse = (Ellipse)FindByName(pieceName);
 
+            this.PlayPieceSound();
             this.RenderPlayersPoints();
 
             if (State.players[1].isPlaying)
@@ -124,6 +130,13 @@ public partial class BoardView : ContentPage
             labelTurnPlayer.TextColor = Color.FromArgb("338AFF");
             labelTurnPlayer.Text = "Turn Player " + player;
         }
+    }
+
+    private async void PlayPieceSound()
+    {
+        var player = audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("piece_falling_down.wav"));
+
+        player.Play();
     }
 
 }

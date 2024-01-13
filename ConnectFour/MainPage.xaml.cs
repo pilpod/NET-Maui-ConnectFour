@@ -1,10 +1,12 @@
 ﻿using ConnectFour.Models;
 using ConnectFour.Views;
+using Plugin.Maui.Audio;
 using System;
 namespace ConnectFour
 {
     public partial class MainPage : ContentPage
     {
+
         public MainPage()
         {
             InitializeComponent();

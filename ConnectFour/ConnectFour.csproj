@@ -50,11 +50,13 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\connect_four_logo.png" />
+	  <None Remove="Resources\Raw\piece_falling_down.wav" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="2.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
