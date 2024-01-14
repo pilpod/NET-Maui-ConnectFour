@@ -2,7 +2,7 @@ namespace ConnectFourTests
 {
     public class UnitTest1
     {
-        [Fact]
+        [Fact (Skip = "Default Test")]
         public void Test1()
         {
 
