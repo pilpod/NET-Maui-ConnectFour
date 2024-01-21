@@ -38,5 +38,18 @@ namespace ConnectFourTests.Models
 
         }
 
+        [Fact]
+        public void StatePlayPieceColumn1Row1()
+        {
+            State state = new State();
+
+            state.PlayPiece(0);
+
+            Assert.NotNull(state.pieces[0]);
+            Assert.True(state.pieces[0] is Piece);
+            Assert.True(state.pieces[0].IsOccupied);
+            Assert.Null(state.pieces[1]);
+        }
+
     }
 }
