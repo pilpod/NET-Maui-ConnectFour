@@ -24,5 +24,19 @@ namespace ConnectFourTests.Models
             Assert.All(state.pieces, piece => Assert.Null(piece));
         }
 
+        [Fact]
+        public void StateCanSetEndGame()
+        {
+            State state = new State();
+            state.GameOver = false;
+            state.PlayPiece(1);
+            state.EndGame();
+
+            Assert.True(state.GameOver);
+            Assert.Equal(1, state.GameRoundsPlayed);
+            Assert.All(state.pieces, piece => Assert.Null(piece));
+
+        }
+
     }
 }

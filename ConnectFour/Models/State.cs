@@ -7,7 +7,7 @@ namespace ConnectFour.Models
     public class State
     {
         public readonly Player[] players;
-        int GameRoundsPlayed;
+        public int GameRoundsPlayed { get; set; }
         public bool GameOver;
         public Piece[] pieces { get; set; }
 
