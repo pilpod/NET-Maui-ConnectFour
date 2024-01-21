@@ -22,8 +22,6 @@ namespace ConnectFourTests.Models
             Assert.Equal(0, state.players[0].Points);
             Assert.Equal(0, state.players[1].Points);
             Assert.All(state.pieces, piece => Assert.Null(piece));
-
-            //Assert.Collection(state.pieces, piece => Assert.Null(piece));
         }
 
     }
